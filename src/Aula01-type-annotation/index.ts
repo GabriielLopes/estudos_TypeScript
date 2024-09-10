@@ -11,6 +11,7 @@ let simbolo: symbol = Symbol('Qualquer-symbol');
 
 let arraysDeNumeros: Array<number> = [1,2,5];
 let arrayDeNumeros2: number[] = [1,2,5];
+
 let arraysDeStrings: Array<string> = ['Gabriel', 'Karla', 'Elias'];
 let arraydeStrings2: string[] = ['a','b','c'];
 
