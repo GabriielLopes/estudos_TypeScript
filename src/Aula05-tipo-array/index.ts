@@ -17,3 +17,8 @@ export function toUpperCase(...args: string[]): string[] {
 }
 
 console.log(toUpperCase('Gabriel', 'lopes'));
+
+// readonly em arrays
+
+const array: readonly string[] = ['Gabriel'];
+const array2: ReadonlyArray<string> = ['Gabriel'];
