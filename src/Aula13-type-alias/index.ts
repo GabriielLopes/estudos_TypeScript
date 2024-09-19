@@ -1,5 +1,5 @@
-// basicamente é criar um apelido para um tipo
-
+// basicamente é criar um apelido para um tipo.
+// Os tipos personalizados deverão sempre começar com letra maiúscula.
 
 // --------------------- TYPE ALIAS ---------------------
 
@@ -14,6 +14,8 @@ type Pessoa = {
 
 type CorRGB = 'Vermelho' | 'Verde' | 'Amarelo';
 type CorCMYK = 'Ciano' | 'Magenta' | 'Preto';
+
+// --------------------- EXEMPLO UNION TYPES ---------------------
 type corPreferida = CorRGB | CorCMYK;
 
 // --------------------- EXEMPLO DE UTILIZAÇÃO DE TYPE ALIAS ---------------------
