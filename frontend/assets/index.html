@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-  <h1>Olá</h1>
+  <div class="container">
+    <h1>EXERCÍCIOS TYPESCRIPT - VALIDAÇÃO DE FORMULÁRIO</h1>
+
+    <div class="box">
+      <h3>Cadastro de usuários</h3>
+      <form action="" class="form" id="form">
+
+        <div class="form-fields">
+          <label for="username">Nome de usuário:</label>
+          <input type="text" name="username" id="" class="input username" placeholder="Seu usuário">
+          <p class="info-erro"></p>
+        </div>
+
+        <div class="form-fields">
+          <label for="email">E-mail:</label>
+          <input type="email" name="email" id="" class="input email" placeholder="Seu e-mail">
+          <p class="info-erro"></p>
+        </div>
+
+        <div class="form-fields">
+          <label for="password">Senha:</label>
+          <input type="password" name="password" id="" class="input password" placeholder="Sua senha">
+          <p class="info-erro"></p>
+        </div>
+
+        <div class="form-fields">
+          <label for="confirmpassword">Confirme sua senha:</label>
+          <input type="password" name="confirmpassword" id="" class="input confirmpassword" placeholder="Confirme sua senha">
+          <p class="info-erro"></p>
+        </div>
+
+        <div class="form-fields">
+          <button type="submit" class="btnSubmit">Cadastrar</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
   <script src="js/bundle.js"></script>
 </body>
+
 </html>
