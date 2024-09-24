@@ -5,18 +5,33 @@ export abstract class Personagem {
   constructor(
     protected nome: string,
     protected ataque: number,
+    protected defesa: number,
     protected vida: number,
   ) {}
 
   atacar(personagem: Personagem): void {
-    this.bordao();
-    console.log(`${this.nome} está atacando ${personagem.nome} e causou ${this.ataque} de dano.`)
-    personagem.perderVida(this.ataque);
+    if (this.vida > 0) {
+      this.bordao();
+      const defesaPersonagemAtacado = personagem.defesa * 0.3;
+      const ataqueEfetivo = this.ataque - defesaPersonagemAtacado;
+
+      personagem.perderVida(ataqueEfetivo);
+      console.log(`${this.emoji} ${this.nome} está atacando ${personagem.nome} e causou ${ataqueEfetivo} de dano.`)
+    } else {
+      console.log(`O personagem ${this.nome} morreu e não pôde finalizar seu ataque.`);
+    }
   }
 
   perderVida(forcaAtaque: number): void {
-    this.vida -= forcaAtaque
-    console.log(`${this.nome} foi atacado. e restou ${this.vida} pontos de vida.`)
+    if (this.vida <= 0) {
+      console.log(`${this.nome} já está morto ! você não pode atacá-lo`);
+    } else if (this.vida > forcaAtaque) {
+      this.vida -= forcaAtaque
+      console.log(`${this.emoji} ${this.nome} foi atacado. e restou ${this.vida} pontos de vida.`)
+    } else if (this.vida <= forcaAtaque) {
+      this.vida -= forcaAtaque
+      console.log(`${this.emoji} ${this.nome} foi atacado e morreu!`);
+    }
   }
 
   abstract bordao(): void;
@@ -36,10 +51,14 @@ export class Monstro extends Personagem {
   }
 }
 
-const guerreira = new Guerreira('Guerreira', 100, 1000);
-const monstro = new Monstro('Monstro', 50, 375);
+const guerreira = new Guerreira('Guerreira', 100, 100,1000);
+const monstro = new Monstro('Monstro', 50, 75, 350);
 
 guerreira.atacar(monstro);
+guerreira.atacar(monstro);
+guerreira.atacar(monstro);
+guerreira.atacar(monstro);
+monstro.atacar(guerreira);
 guerreira.atacar(monstro);
 guerreira.atacar(monstro);
 monstro.atacar(guerreira);
