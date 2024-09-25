@@ -4,6 +4,7 @@
 // --------------------- TYPE ALIAS ---------------------
 
 type Idade = number;
+
 type Pessoa = {
   nome: string;
   sobrenome: string;
