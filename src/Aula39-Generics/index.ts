@@ -25,4 +25,3 @@ console.log(arrayFiltradoOriginal)
 
 const arrayFiltrado = meuFilter(array, (valor) => valor > 6);
 console.log(arrayFiltrado)
-
