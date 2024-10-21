@@ -30,12 +30,10 @@ form.addEventListener('submit', function (event) {
         console.log('Enviado!');
 });
 function hideErrorMessages(form) {
-    form
-        .querySelectorAll('.' + SHOW_MESSAGE_ERROR)
-        .forEach((item) => item.classList.remove(SHOW_MESSAGE_ERROR));
+    form.querySelectorAll('.' + SHOW_MESSAGE_ERROR).forEach((item) => item.classList.remove(SHOW_MESSAGE_ERROR));
 }
 function showErrorMessage(input, msg) {
-    const form_fields = input.parentElement; // irá capturar o pai do elemento, noo caso 'form-fields'
+    const form_fields = input.parentElement;
     const errorMessage = form_fields.querySelector('.info-erro');
     errorMessage.innerHTML = msg;
     form_fields.classList.add(SHOW_MESSAGE_ERROR);
